@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "534162460776",
+    "project_id": "borderrideshare",
+    "storage_bucket": "borderrideshare.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:534162460776:android:30261d4accedc2dd2fabdd",
+        "android_client_info": {
+          "package_name": "com.example.eduride"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBPhB2nT65HXWusfi9Jj0nIiHUM7yrgHrA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
