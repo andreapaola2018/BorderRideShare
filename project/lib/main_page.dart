@@ -23,34 +23,36 @@ class _MainPageState extends State<MainPage> {
       'bridge': 'Americas',
       'spaceAvailable': '3 seats',
       'carInfo': 'Tesla Model 3, Blue',
+      'sentriLane': 'No', // Add Sentri Lane field
     });
-        _posts.add({
+    _posts.add({
       'name': 'Jane Doe',
       'destination': 'Del Valle High School',
       'meetingTime': '6:00 AM',
       'bridge': 'Paso del Norte',
       'spaceAvailable': '4 seats',
       'carInfo': 'Volkswagen, White',
+      'sentriLane': 'Yes',
     });
-
-            _posts.add({
-      'name': 'Joe',
-      'destination': 'EPCC Valle Verde',
-      'meetingTime': '6:00 AM',
-      'bridge': 'Ysleta-Zaragoza',
-      'spaceAvailable': '1 seat',
-      'carInfo': 'Honda Civic, Black',
-    });
-            _posts.add({
-      'name': 'Jen Doe',
+        _posts.add({
+      'name': 'Andrea',
       'destination': 'UTEP',
+      'meetingTime': '8:00 AM',
+      'bridge': 'Zaragoza',
+      'spaceAvailable': '1 seat',
+      'carInfo': 'Volkswagen, White',
+      'sentriLane': 'Yes',
+    });
+    _posts.add({
+      'name': 'Jen smith',
+      'destination': 'El Paso High School',
       'meetingTime': '7:00 AM',
-      'bridge': 'Bridge of the Americas',
+      'bridge': 'Americas',
       'spaceAvailable': '2 seats',
-      'carInfo': 'Kia soul, Green',
+      'carInfo': 'Subaru, White',
+      'sentriLane': 'No',
     });
 
-    // Initialize the filtered list
     _filteredPosts = List.from(_posts);
   }
 
@@ -80,6 +82,7 @@ class _MainPageState extends State<MainPage> {
     final TextEditingController _bridgeController = TextEditingController();
     final TextEditingController _spaceAvailableController = TextEditingController();
     final TextEditingController _carInfoController = TextEditingController();
+    final TextEditingController _sentriController = TextEditingController(); // Controller for Sentri Lane
 
     showModalBottomSheet(
       context: context,
@@ -142,6 +145,14 @@ class _MainPageState extends State<MainPage> {
                     border: OutlineInputBorder(),
                   ),
                 ),
+                SizedBox(height: 8.0),
+                TextField(
+                  controller: _sentriController,
+                  decoration: InputDecoration(
+                    labelText: 'Sentri Lane (Yes/No)',
+                    border: OutlineInputBorder(),
+                  ),
+                ),
                 SizedBox(height: 20.0),
                 ElevatedButton(
                   onPressed: () {
@@ -151,7 +162,8 @@ class _MainPageState extends State<MainPage> {
                         _meetingTimeController.text.isNotEmpty &&
                         _bridgeController.text.isNotEmpty &&
                         _spaceAvailableController.text.isNotEmpty &&
-                        _carInfoController.text.isNotEmpty) {
+                        _carInfoController.text.isNotEmpty &&
+                        _sentriController.text.isNotEmpty) {
                       _addPost({
                         'name': _nameController.text,
                         'destination': _destinationController.text,
@@ -159,6 +171,7 @@ class _MainPageState extends State<MainPage> {
                         'bridge': _bridgeController.text,
                         'spaceAvailable': _spaceAvailableController.text,
                         'carInfo': _carInfoController.text,
+                        'sentriLane': _sentriController.text, // Add Sentri Lane to post
                       });
                       Navigator.pop(context); // Close the modal
                     }
@@ -224,6 +237,7 @@ class _MainPageState extends State<MainPage> {
                               Text('Bridge: ${_filteredPosts[index]['bridge']}'),
                               Text('Space Available: ${_filteredPosts[index]['spaceAvailable']}'),
                               Text('Car Info: ${_filteredPosts[index]['carInfo']}'),
+                              Text('Sentri Lane: ${_filteredPosts[index]['sentriLane']}'), // Display Sentri Lane
                               SizedBox(height: 10),
                               ElevatedButton(
                                 onPressed: () => _openChat(_filteredPosts[index]['name'] ?? ''),
