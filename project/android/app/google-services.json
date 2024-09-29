@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "932084544401",
+    "project_id": "edu-ride",
+    "storage_bucket": "edu-ride.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:932084544401:android:fc098c268bf04784fa2030",
+        "android_client_info": {
+          "package_name": "com.eduride.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDaLaVVUN_rjMc0G2mXDGD8sL7v-mrpsIA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
